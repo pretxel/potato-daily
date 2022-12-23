@@ -42,7 +42,6 @@
         <p>{$_('page_parraf_1')}</p>
         <p>{$_('page_parraf_2')}</p>
         <p>{$_('page_parraf_3')}</p>
-
         <button on:click={handleClick}>{$_('page_button_start')}</button>
       </div>
     {/if}

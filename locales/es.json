@@ -1,7 +1,12 @@
 {
   "page_title": "Potato Daily",
-  "page_parraf_1": "A daily scrum is a event to helps scrum teams to be productive and efficient. Scrum master is responsible for arranging the meeting and moderate.",
-  "page_parraf_2": "But, ¿what happen if the scrum team doesn't have a scrum master?",
-  "page_parraf_3": "For this situations, I decided to create Potato Daily that chooses randomly each member to talk in that daily",
-  "page_button_start": "Empezar"
+  "page_parraf_1": "Una daily scrum es un evento agile que ayuda a los equipos a ser mas productivos y eficientes. El scrum master esta encargado en agendar y moderar la reunion.",
+  "page_parraf_2": "Pero, ¿Qué pasa si no tenemos un scrum master?",
+  "page_parraf_3": "Para esto, yo he decidido crear Potato Daily que permite de manera aleatoria elegir el turno que le toca a cada integrante.",
+  "page_button_start": "Empezar",
+  "page_button_next": "Siguiente",
+  "page_add_new_avatar": "Agregar miembro",
+  "page_button_add": "Agregar",
+  "page_button_again": "Juega de nuevo",
+  "page_avatar_selected": "Miembro seleccionado"
 }
