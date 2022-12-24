@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { _ } from 'svelte-i18n'
   import {
     count,
     startingCounter,
@@ -17,7 +18,7 @@
   const DEFAULT_COUNTER = 3;
 
   let showCounter = false;
-  let labelStart = "Start";
+  let labelStart = $_('page_button_start');
   let mode = MODES.edit;
   let intervalIdTemporal;
   let peopleTemporalM = [];
@@ -39,7 +40,7 @@
     editable = true;
     mode = MODES.edit;
     avatarSelected.set({});
-    labelStart = "Start";
+    labelStart = $_('page_button_start');
     peopleT = [...people];
   };
 
@@ -70,7 +71,7 @@
     editable = false;
     startingCounter.set(true);
     count.set(DEFAULT_COUNTER);
-    labelStart = "Next";
+    labelStart = $_('page_button_next');
   }
 
   function handleRestart(event) {
@@ -125,7 +126,7 @@
 
 {#if showCounter === false && avatarSelectedC.name}
   <div>
-    <h3>Avatar selected</h3>
+    <h3>{$_('page_avatar_selected')}</h3>
     <ul>
       <Avatar
         name={avatarSelectedC.name}
@@ -137,22 +138,22 @@
   </div>
 {/if}
 
-{#if mode === MODES.started || mode === MODES.edit}
+{#if (mode === MODES.started || mode === MODES.edit) && people.length > 0 }
   <button class="start" on:click={handleStart}>{labelStart}</button>
 {/if}
 
 {#if mode === MODES.finished}
-  <button class="start" on:click={handleRestart}>Again</button>
+  <button class="start" on:click={handleRestart}>{$_('page_button_again')}</button>
 {/if}
 
 <style>
   ul {
-    max-width: 400px;
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-basis: auto;
     padding: 0;
+    flex-wrap: wrap;
   }
 
   button {

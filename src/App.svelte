@@ -28,7 +28,7 @@
 </script>
 
 <main>
-  <img class="logo" src="/potato.png" alt="Potato" />
+  <img  width="150" height="400" class="logo" src="/potato.webp" alt="Potato" />
 
   
 
@@ -42,8 +42,7 @@
         <p>{$_('page_parraf_1')}</p>
         <p>{$_('page_parraf_2')}</p>
         <p>{$_('page_parraf_3')}</p>
-
-        <!-- <button on:click={handleClick}>{$_('page_button_start')}</button> -->
+        <button on:click={handleClick}>{$_('page_button_start')}</button>
       </div>
     {/if}
 
