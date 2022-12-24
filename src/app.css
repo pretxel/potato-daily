@@ -42,7 +42,7 @@ h1 {
 }
 
 #app {
-  width: 300px;
+  width: 500px;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -82,5 +82,11 @@ button.start{
   }
   a:hover {
     color: #747bff;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #app {
+    width: 300px;
   }
 }

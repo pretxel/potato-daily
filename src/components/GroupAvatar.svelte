@@ -148,12 +148,12 @@
 
 <style>
   ul {
-    max-width: 400px;
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-basis: auto;
     padding: 0;
+    flex-wrap: wrap;
   }
 
   button {
