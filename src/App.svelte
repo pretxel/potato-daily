@@ -28,7 +28,7 @@
 </script>
 
 <main>
-  <img class="logo" src="/potato.png" alt="Potato" />
+  <img  width="150" height="400" class="logo" src="/potato.webp" alt="Potato" />
 
   
 
