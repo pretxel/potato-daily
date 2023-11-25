@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { _ } from 'svelte-i18n'
+  import { _ } from "svelte-i18n";
   import {
     count,
     startingCounter,
@@ -18,7 +18,7 @@
   const DEFAULT_COUNTER = 3;
 
   let showCounter = false;
-  let labelStart = $_('page_button_start');
+  let labelStart = $_("page_button_start");
   let mode = MODES.edit;
   let intervalIdTemporal;
   let peopleTemporalM = [];
@@ -40,7 +40,7 @@
     editable = true;
     mode = MODES.edit;
     avatarSelected.set({});
-    labelStart = $_('page_button_start');
+    labelStart = $_("page_button_start");
     peopleT = [...people];
   };
 
@@ -71,7 +71,7 @@
     editable = false;
     startingCounter.set(true);
     count.set(DEFAULT_COUNTER);
-    labelStart = $_('page_button_next');
+    labelStart = $_("page_button_next");
   }
 
   function handleRestart(event) {
@@ -93,12 +93,7 @@
 {#if mode === MODES.edit}
   <ul>
     {#each people as item, index}
-      <Avatar
-        name={item.name}
-        image={`${item.image}${item.name}.svg`}
-        {editable}
-        {index}
-      />
+      <Avatar name={item.name} image={`${item.image}`} {editable} {index} />
     {/each}
   </ul>
 {/if}
@@ -126,7 +121,7 @@
 
 {#if showCounter === false && avatarSelectedC.name}
   <div>
-    <h3>{$_('page_avatar_selected')}</h3>
+    <h3>{$_("page_avatar_selected")}</h3>
     <ul>
       <Avatar
         name={avatarSelectedC.name}
@@ -138,12 +133,14 @@
   </div>
 {/if}
 
-{#if (mode === MODES.started || mode === MODES.edit) && people.length > 0 }
+{#if (mode === MODES.started || mode === MODES.edit) && people.length > 0}
   <button class="start" on:click={handleStart}>{labelStart}</button>
 {/if}
 
 {#if mode === MODES.finished}
-  <button class="start" on:click={handleRestart}>{$_('page_button_again')}</button>
+  <button class="start" on:click={handleRestart}
+    >{$_("page_button_again")}</button
+  >
 {/if}
 
 <style>

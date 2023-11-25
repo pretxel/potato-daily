@@ -1,5 +1,5 @@
 <script>
-  import { _ } from 'svelte-i18n'
+  import { _ } from "svelte-i18n";
   import { people } from "../peopleStore.js";
 
   let name = "";
@@ -9,7 +9,7 @@
       $people = [
         ...$people,
         {
-          image: "https://avatars.dicebear.com/api/avataaars/",
+          image: "https://api.dicebear.com/7.x/avataaars/svg?seed=" + name,
           name,
         },
       ];
@@ -23,9 +23,9 @@
 
 <div>
   <form>
-    <span>{$_('page_add_new_avatar')}</span>
+    <span>{$_("page_add_new_avatar")}</span>
     <input bind:value={name} />
-    <button on:click={handleNew}>{$_('page_button_add')}</button>
+    <button on:click={handleNew}>{$_("page_button_add")}</button>
   </form>
 </div>
 
