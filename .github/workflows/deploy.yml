@@ -18,7 +18,7 @@ jobs:
         with:
           deno-version: v1.x
 
-      - name: Build 
+      - name: Build
         env:
           DENO_DIR: .deno
         run: deno task build
@@ -28,4 +28,4 @@ jobs:
         with:
           project: "pretxel-potato-daily"
           root: dist
-          entrypoint: https://deno.land/std@0.157.0/http/file_server.ts
+          entrypoint: https://deno.land/std@0.224.0/http/file_server.ts
