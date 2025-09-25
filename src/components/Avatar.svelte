@@ -17,7 +17,12 @@
 
 <li>
   {#if editable}
-    <div class="close" on:click={handleRemove} on:keypress={handleRemove} />
+    <button
+      class="close"
+      type="button"
+      aria-label="Remove {name}"
+      on:click={handleRemove}
+    ></button>
   {/if}
   <img src={image} alt={name} />
   <span>{name}</span>
@@ -36,6 +41,19 @@
     flex-direction: column;
   }
 
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
   .close::after {
     position: absolute;
     top: 0;
@@ -45,7 +63,6 @@
     background-size: 20px 20px;
     width: 20px;
     height: 20px;
-    cursor: pointer;
     display: inline-block;
   }
 </style>
