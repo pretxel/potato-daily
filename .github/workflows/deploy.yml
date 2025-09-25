@@ -16,16 +16,9 @@ jobs:
       - name: Install deno
         uses: denoland/setup-deno@v1
         with:
-          deno-version: v1.x
+          deno-version: v2.x
 
       - name: Build
         env:
           DENO_DIR: .deno
         run: deno task build
-
-      - name: Deploy to Deno
-        uses: denoland/deployctl@v1
-        with:
-          project: "pretxel-potato-daily"
-          root: dist
-          entrypoint: https://deno.land/std@0.224.0/http/file_server.ts
