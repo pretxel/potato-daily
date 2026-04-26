@@ -8,5 +8,8 @@
   "page_add_new_avatar": "Add new avatar",
   "page_button_add": "Add",
   "page_button_again": "Again",
-  "page_avatar_selected": "Avatar selected"
+  "page_avatar_selected": "Avatar selected",
+  "page_empty_state": "Add at least one person to get started.",
+  "page_counter_picking_in": "Picking in {count}…",
+  "error_duplicate_name": "Name already added"
 }

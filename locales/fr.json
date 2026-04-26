@@ -8,5 +8,8 @@
   "page_add_new_avatar": "Ajouter un membre",
   "page_button_add": "Ajouter",
   "page_button_again": "Rejouer",
-  "page_avatar_selected": "Membre sélectionné"
+  "page_avatar_selected": "Membre sélectionné",
+  "page_empty_state": "Ajoutez au moins une personne pour commencer.",
+  "page_counter_picking_in": "Choix dans {count}…",
+  "error_duplicate_name": "Ce prénom est déjà ajouté"
 }

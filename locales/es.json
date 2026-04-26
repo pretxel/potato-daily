@@ -8,5 +8,8 @@
   "page_add_new_avatar": "Agregar miembro",
   "page_button_add": "Agregar",
   "page_button_again": "Juega de nuevo",
-  "page_avatar_selected": "Miembro seleccionado"
+  "page_avatar_selected": "Miembro seleccionado",
+  "page_empty_state": "Agrega al menos una persona para comenzar.",
+  "page_counter_picking_in": "Eligiendo en {count}…",
+  "error_duplicate_name": "El nombre ya fue agregado"
 }

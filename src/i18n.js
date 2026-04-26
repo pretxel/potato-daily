@@ -1,4 +1,4 @@
-import { getLocaleFromNavigator, init, register } from 'svelte-i18n';
+import { getLocaleFromNavigator, init, locale, register } from 'svelte-i18n';
 
 register('en', () => import('../locales/en.json'));
 register('es', () => import('../locales/es.json'));
@@ -9,3 +9,11 @@ init({
 	fallbackLocale: 'en',
 	initialLocale: getLocaleFromNavigator(),
 });
+
+if (typeof document !== 'undefined') {
+	locale.subscribe((l) => {
+		if (l) {
+			document.documentElement.lang = l;
+		}
+	});
+}

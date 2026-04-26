@@ -1,17 +1,12 @@
 <script>
-  export let name;
-  export let image;
-  export let editable;
-  export let index;
+  import { appState } from "../state.svelte.js";
 
-  import { people } from "../peopleStore.js";
+  let { name, image, editable, index } = $props();
 
   function handleRemove() {
-    const peppleCopy = [...$people];
-    peppleCopy.splice(index, 1);
-    $people = peppleCopy;
-    const avatars = [...$people];
-    localStorage.setItem("people", JSON.stringify(avatars));
+    const copy = [...appState.people];
+    copy.splice(index, 1);
+    appState.people = copy;
   }
 </script>
 
@@ -21,8 +16,14 @@
       class="close"
       type="button"
       aria-label="Remove {name}"
-      on:click={handleRemove}
-    ></button>
+      title="Remove {name}"
+      onclick={handleRemove}
+    >
+      <svg viewBox="0 0 10 10" aria-hidden="true" focusable="false">
+        <line x1="1" y1="1" x2="9" y2="9" />
+        <line x1="9" y1="1" x2="1" y2="9" />
+      </svg>
+    </button>
   {/if}
   <img src={image} alt={name} />
   <span>{name}</span>
@@ -52,17 +53,22 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .close::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    content: "";
-    background-image: url("https://www.pngkey.com/png/full/408-4088745_red-close-icon-png.png");
-    background-size: 20px 20px;
-    width: 20px;
-    height: 20px;
-    display: inline-block;
+  .close svg {
+    width: 16px;
+    height: 16px;
+    stroke: #ff4d4f;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  .close:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 </style>

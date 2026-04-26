@@ -1,27 +1,24 @@
 <script>
   import { _, isLoading } from "svelte-i18n";
-  import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  import { people, peopleToPlay } from "./peopleStore.js";
+  import { appState } from "./state.svelte.js";
   import GroupAvatar from "./components/GroupAvatar.svelte";
 
-  let editable = true;
-  let peopleValue;
-  let showIntro = true;
-  let showAvatars = false;
+  const prefersReducedMotion = typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  onMount(() => {
-    people.subscribe((value) => {
-      peopleValue = value;
-      peopleToPlay.set([...value]);
-    });
+  let showIntro = $state(true);
+  let showAvatars = $state(false);
+
+  $effect(() => {
+    appState.peopleToPlay = [...appState.people];
   });
 
   function handleClick() {
     showIntro = false;
     setTimeout(() => {
       showAvatars = true;
-    }, 800);
+    }, prefersReducedMotion ? 0 : 800);
   }
 </script>
 
@@ -29,21 +26,21 @@
   <img width="130" height="400" class="logo" src="/potato.webp" alt="Potato" />
 
   {#if $isLoading}
-    Please wait...
+    <div class="spinner" aria-label="Loading" role="status"></div>
   {:else}
     <h1>{$_("page_title")}</h1>
     {#if showIntro}
-      <div out:fade={{ duration: 500 }}>
+      <div out:fade={{ duration: prefersReducedMotion ? 0 : 500 }}>
         <p>{$_("page_parraf_1")}</p>
         <p>{$_("page_parraf_2")}</p>
         <p>{$_("page_parraf_3")}</p>
-        <button on:click={handleClick}>{$_("page_button_start")}</button>
+        <button onclick={handleClick}>{$_("page_button_start")}</button>
       </div>
     {/if}
 
     {#if showAvatars}
-      <div in:fade={{ duration: 500 }}>
-        <GroupAvatar people={peopleValue} {editable} />
+      <div in:fade={{ duration: prefersReducedMotion ? 0 : 500 }}>
+        <GroupAvatar />
       </div>
     {/if}
   {/if}

@@ -1,24 +1,29 @@
 <script>
-  import { onMount } from "svelte";
-  import { count, intervalId } from "../peopleStore.js";
+  import { _ } from "svelte-i18n";
+  import { appState } from "../state.svelte.js";
 
-  let countValue;
+  let { onDone } = $props();
 
-  count.subscribe((value) => {
-    countValue = value;
+  $effect(() => {
+    const id = setInterval(() => {
+      appState.count -= 1;
+    }, 1000);
+    return () => clearInterval(id);
   });
 
-  onMount(() => {
-    const intervalIdT = setInterval(() => {
-      count.update((n) => n - 1);
-    }, 1000);
-    intervalId.set(intervalIdT);
+  $effect(() => {
+    if (appState.count === 0) {
+      onDone?.();
+    }
   });
 </script>
 
-<div>
+<div role="timer" aria-live="assertive" aria-atomic="true">
+  <p class="label">
+    {$_("page_counter_picking_in", { values: { count: appState.count } })}
+  </p>
   <span>
-    {countValue}
+    {appState.count}
   </span>
 </div>
 
@@ -27,15 +32,17 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
+  .label {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    opacity: 0.8;
+  }
   span {
-    border-radius: 8px;
-    border: 1px solid transparent;
     padding: 0.5em 1.2em;
     margin-top: 20px;
     font-size: 1.5em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a;
-    transition: border-color 0.25s;
+    background-color: transparent;
   }
 </style>
