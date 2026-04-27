@@ -1,5 +1,4 @@
 <script>
-  import { _ } from "svelte-i18n";
   import { appState } from "../state.svelte.js";
 
   let { onDone } = $props();
@@ -18,31 +17,48 @@
   });
 </script>
 
-<div role="timer" aria-live="assertive" aria-atomic="true">
-  <p class="label">
-    {$_("page_counter_picking_in", { values: { count: appState.count } })}
-  </p>
-  <span>
-    {appState.count}
-  </span>
+<div
+  class="counter-wrapper"
+  role="timer"
+  aria-live="assertive"
+  aria-atomic="true"
+  aria-label="Picking in {appState.count}"
+>
+  {#key appState.count}
+    <span class="number">{appState.count}</span>
+  {/key}
 </div>
 
 <style>
-  div {
-    margin-top: 20px;
-    margin-bottom: 20px;
+  .counter-wrapper {
+    margin: var(--space-xl) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .label {
-    margin: 0 0 0.4em 0;
-    font-size: 0.95em;
-    opacity: 0.8;
+
+  .number {
+    font-family: var(--font-display);
+    font-size: 5em;
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1;
+    display: inline-block;
+    text-shadow: 0 0 40px var(--color-accent-glow);
+    animation: counter-pulse 0.45s var(--transition-spring) both;
   }
-  span {
-    padding: 0.5em 1.2em;
-    margin-top: 20px;
-    font-size: 1.5em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: transparent;
+
+  @keyframes counter-pulse {
+    0% {
+      transform: scale(1.25);
+      opacity: 0.7;
+    }
+    60% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 </style>
