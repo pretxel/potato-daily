@@ -32,7 +32,8 @@
 	--shadow-card: 0 4px 24px rgba(0, 0, 0, 0.45);
 	--shadow-glow: 0 0 20px var(--color-accent-glow);
 	--shadow-winner:
-		0 0 0 3px var(--color-accent), 0 0 32px var(--color-winner-glow);
+		0 0 0 3px var(--color-accent),
+		0 0 32px var(--color-winner-glow);
 
 	font-family: var(--font-body);
 	font-size: 16px;
