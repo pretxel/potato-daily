@@ -39,7 +39,7 @@
 
   .number {
     font-family: var(--font-display);
-    font-size: 5em;
+    font-size: clamp(3.5em, 14vw, 5em);
     font-weight: 700;
     color: var(--color-accent);
     line-height: 1;

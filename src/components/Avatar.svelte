@@ -71,8 +71,8 @@
   }
 
   img {
-    width: 80px;
-    height: 80px;
+    width: clamp(64px, 18vw, 80px);
+    height: clamp(64px, 18vw, 80px);
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid transparent;
@@ -83,11 +83,13 @@
       border-color var(--transition-base);
   }
 
-  li:hover img {
-    transform: translateY(-4px);
-    box-shadow:
-      0 8px 20px rgba(0, 0, 0, 0.4),
-      0 0 16px var(--color-accent-glow);
+  @media (hover: hover) {
+    li:hover img {
+      transform: translateY(-4px);
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.4),
+        0 0 16px var(--color-accent-glow);
+    }
   }
 
   span {
@@ -95,7 +97,7 @@
     font-size: 0.78em;
     font-weight: 500;
     color: var(--color-text-muted);
-    max-width: 90px;
+    max-width: clamp(70px, 18vw, 90px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -103,11 +105,12 @@
 
   .close {
     position: absolute;
-    top: -4px;
-    right: -4px;
-    width: 22px;
-    height: 22px;
-    padding: 0;
+    top: -10px;
+    right: -10px;
+    width: 32px;
+    height: 32px;
+    min-height: 0;
+    padding: 5px;
     margin: 0;
     background: var(--color-surface-alt);
     border: 1.5px solid rgba(245, 236, 215, 0.2);
@@ -116,16 +119,20 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
     transition:
       background var(--transition-fast),
       transform var(--transition-fast);
   }
 
-  .close:hover {
-    background: rgba(255, 107, 107, 0.2);
-    transform: scale(1.15) !important;
-    box-shadow: none !important;
-    filter: none !important;
+  @media (hover: hover) {
+    .close:hover {
+      background: rgba(255, 107, 107, 0.2);
+      transform: scale(1.15) !important;
+      box-shadow: none !important;
+      filter: none !important;
+    }
   }
 
   .close svg {

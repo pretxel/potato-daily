@@ -50,7 +50,8 @@
 
 <style>
   .logo {
-    height: 130px;
+    width: auto;
+    height: clamp(96px, 24vw, 130px);
     animation: logo-bob 3.2s ease-in-out infinite;
   }
 
@@ -100,8 +101,15 @@
   }
 
   p {
-    text-align: justify;
+    text-align: left;
     color: var(--color-text-muted);
     line-height: 1.7;
+    text-wrap: pretty;
+  }
+
+  @media (min-width: 600px) {
+    p {
+      text-align: justify;
+    }
   }
 </style>

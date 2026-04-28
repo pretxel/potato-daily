@@ -70,7 +70,7 @@
 <style>
   .new-avatar-wrapper {
     margin-top: var(--space-xl);
-    padding: var(--space-lg);
+    padding: clamp(var(--space-md), 4vw, var(--space-lg));
     background: var(--color-surface);
     border-radius: var(--radius-lg);
     border: 1px solid rgba(245, 166, 35, 0.12);
@@ -101,9 +101,10 @@
 
   input {
     flex: 1;
+    min-width: 0;
     font-family: var(--font-body);
-    font-size: 0.95em;
-    padding: 0.65em 1em;
+    font-size: 16px;
+    padding: 0.7em 1em;
     background: var(--color-bg);
     border: 1.5px solid rgba(245, 236, 215, 0.12);
     border-radius: var(--radius-md);
@@ -157,15 +158,17 @@
     color: var(--color-accent);
     border: 1.5px solid var(--color-accent);
     border-radius: var(--radius-md) !important;
-    padding: 0.65em 1.2em;
+    padding: 0.7em 1.2em;
     font-size: 0.95em;
     flex-shrink: 0;
   }
 
-  .add-btn:hover {
-    background: var(--color-accent);
-    color: var(--color-bg);
-    box-shadow: var(--shadow-glow);
+  @media (hover: hover) {
+    .add-btn:hover {
+      background: var(--color-accent);
+      color: var(--color-bg);
+      box-shadow: var(--shadow-glow);
+    }
   }
 
   .error {

@@ -144,7 +144,7 @@
   .avatar-grid {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: clamp(12px, 4vw, 24px);
     flex-basis: auto;
     padding: 0;
     margin: var(--space-lg) 0;
@@ -160,7 +160,7 @@
       var(--color-surface-alt) 100%
     );
     border-radius: var(--radius-lg);
-    width: 180px;
+    width: min(180px, 100%);
     margin: var(--space-lg) auto;
     padding: var(--space-md) var(--space-md) var(--space-lg);
     box-shadow: var(--shadow-winner);
@@ -213,8 +213,8 @@
     box-shadow:
       0 0 0 3px var(--color-accent-glow),
       var(--shadow-glow);
-    width: 90px;
-    height: 90px;
+    width: clamp(80px, 22vw, 90px);
+    height: clamp(80px, 22vw, 90px);
   }
 
   .confetti-container {
