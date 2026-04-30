@@ -48,6 +48,10 @@
   {/if}
 </main>
 
+<footer class="site-footer">
+  <p>Made with ❤️ | 2026 | pretxel</p>
+</footer>
+
 <style>
   .logo {
     width: auto;
@@ -111,5 +115,20 @@
     p {
       text-align: justify;
     }
+  }
+
+  .site-footer {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: var(--space-lg) var(--space-md);
+    text-align: center;
+  }
+
+  .site-footer p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    text-align: center;
   }
 </style>

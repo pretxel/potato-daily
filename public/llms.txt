@@ -1,0 +1,32 @@
+# Potato Daily
+
+> Free random picker for Scrum daily standups. Helps agile teams and Scrum Masters fairly select who speaks next during daily standup meetings, sprint planning, and retrospectives.
+
+Potato Daily is a single-page web application built with Svelte 5 and Vite 6. Users add team members (with auto-generated avatars), start a round, watch a short countdown, and the app randomly picks one person to speak. Picked people are removed from the pool until everyone has had a turn. State is persisted in `localStorage` — no account, no server, no tracking beyond Google Analytics.
+
+## Key facts
+
+- **Purpose**: Random selection tool for Scrum daily standup meetings.
+- **Audience**: Scrum Masters, agile coaches, engineering team leads, distributed teams running stand-ups.
+- **Cost**: Free, no signup, no paywall.
+- **Languages**: English, Spanish, French (auto-detected from browser).
+- **Privacy**: Team data stored locally in the browser only. Avatars generated via DiceBear API.
+- **Platform**: Web (any modern browser, mobile and desktop).
+
+## How to use
+
+1. Open https://potatodaily.com/
+2. Add each team member by name — an avatar is generated automatically.
+3. Click start. Countdown begins.
+4. App picks one random person from the remaining pool.
+5. That person speaks. Repeat until pool is empty.
+6. Reset to play another round.
+
+## Pages
+
+- [Home / App](https://potatodaily.com/): The full application — add team, run rounds, pick speakers.
+
+## Optional
+
+- [Sitemap](https://potatodaily.com/sitemap.xml)
+- [Author on X / Twitter](https://twitter.com/pretxelcom)

@@ -2,19 +2,25 @@
 <urlset
 	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
 		http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 	<url>
 		<loc>https://potatodaily.com/</loc>
-		<lastmod>2026-04-29</lastmod>
+		<lastmod>2026-04-30</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>1.0</priority>
 		<xhtml:link rel="alternate" hreflang="en" href="https://potatodaily.com/" />
 		<xhtml:link rel="alternate" hreflang="es" href="https://potatodaily.com/" />
 		<xhtml:link rel="alternate" hreflang="fr" href="https://potatodaily.com/" />
 		<xhtml:link rel="alternate" hreflang="x-default" href="https://potatodaily.com/" />
+		<image:image>
+			<image:loc>https://potatodaily.com/potato.png</image:loc>
+			<image:title>Potato Daily logo</image:title>
+			<image:caption>Random picker for Scrum daily standups</image:caption>
+		</image:image>
 	</url>
 
 </urlset>

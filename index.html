@@ -7,7 +7,7 @@
 
     <title>Potato Daily — Random Picker for Scrum Daily Standups</title>
     <meta name="description" content="Potato Daily is a free random picker that helps Scrum Masters and agile teams run fair, fast daily standups by selecting who speaks next." />
-    <meta name="keywords" content="scrum daily, daily standup, scrum master tool, agile standup, random picker, sprint daily meeting, retrospective, agile team" />
+    <meta name="keywords" content="scrum daily, daily standup, scrum master tool, agile standup, random picker, sprint daily meeting, retrospective, agile team, who goes next, standup picker, daily scrum tool, sprint planning picker" />
     <meta name="author" content="Pretxel" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="googlebot" content="index, follow" />
@@ -49,30 +49,156 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://api.dicebear.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400,0..100,0..1;0,9..144,700,0..100,0..1;1,9..144,400,0..100,0..1;1,9..144,700,0..100,0..1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Potato Daily",
-        "url": "https://potatodaily.com/",
-        "description": "Free random picker that helps Scrum Masters and agile teams run fair, fast daily standups by selecting who speaks next.",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Any",
-        "browserRequirements": "Requires JavaScript",
-        "inLanguage": ["en", "es", "fr"],
-        "image": "https://potatodaily.com/potato.png",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Pretxel",
-          "url": "https://twitter.com/pretxelcom"
-        }
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "@id": "https://potatodaily.com/#app",
+            "name": "Potato Daily",
+            "alternateName": ["Te Toca", "Scrum Daily Picker"],
+            "url": "https://potatodaily.com/",
+            "description": "Free random picker that helps Scrum Masters and agile teams run fair, fast daily standups by selecting who speaks next.",
+            "applicationCategory": "BusinessApplication",
+            "applicationSubCategory": "Productivity",
+            "operatingSystem": "Any",
+            "browserRequirements": "Requires JavaScript",
+            "inLanguage": ["en", "es", "fr"],
+            "image": "https://potatodaily.com/potato.png",
+            "screenshot": "https://potatodaily.com/potato.png",
+            "isAccessibleForFree": true,
+            "featureList": [
+              "Random selection of next speaker for daily standups",
+              "Avatar generation for each team member",
+              "Local persistence of team roster in browser",
+              "Multilingual interface (English, Spanish, French)",
+              "Countdown animation before reveal",
+              "No account, no signup, no tracking of team data"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            },
+            "author": { "@id": "https://potatodaily.com/#author" },
+            "publisher": { "@id": "https://potatodaily.com/#org" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://potatodaily.com/#org",
+            "name": "Potato Daily",
+            "url": "https://potatodaily.com/",
+            "logo": "https://potatodaily.com/potato.png",
+            "sameAs": ["https://twitter.com/pretxelcom"]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://potatodaily.com/#author",
+            "name": "Pretxel",
+            "url": "https://twitter.com/pretxelcom"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://potatodaily.com/#website",
+            "url": "https://potatodaily.com/",
+            "name": "Potato Daily",
+            "description": "Random picker for Scrum daily standups.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://potatodaily.com/#org" }
+          },
+          {
+            "@type": "HowTo",
+            "name": "How to run a fair Scrum daily standup with Potato Daily",
+            "description": "Use a random picker to choose who speaks next during a daily standup so order is fair and meetings stay on time.",
+            "totalTime": "PT2M",
+            "tool": [
+              { "@type": "HowToTool", "name": "Potato Daily web app" }
+            ],
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Add team members",
+                "text": "Open potatodaily.com and add each teammate by name. An avatar is generated automatically for every person."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Start the round",
+                "text": "Click start. A short countdown plays before the picker reveals the next speaker."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Speaker shares update",
+                "text": "The selected teammate gives their standup update — what they did, what they will do, blockers."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Repeat until empty",
+                "text": "Pick the next person. The picker removes already-chosen names from the pool until everyone has spoken."
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Potato Daily?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Potato Daily is a free web-based random picker that helps Scrum Masters and agile teams run fair daily standups by randomly selecting who speaks next from the team roster."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Potato Daily free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Potato Daily is completely free, requires no signup, no account, and no payment."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is my team data stored?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Team names are stored locally in your browser using localStorage. Nothing is uploaded to a server. Avatars are generated by the public DiceBear API based on the name you enter."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What languages does Potato Daily support?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Potato Daily supports English, Spanish, and French. The interface auto-detects the language from your browser settings and falls back to English."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I use Potato Daily for retrospectives or sprint planning?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. While designed for daily standups, the random picker works for any Scrum or agile ceremony where you need to fairly choose who speaks or contributes next, including retrospectives, sprint planning, and refinement sessions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Potato Daily work on mobile?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Potato Daily is a responsive web app and works on any modern mobile or desktop browser."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
 
@@ -88,8 +214,48 @@
   <body style="display: flex; flex-direction: column;">
     <div id="app"></div>
     <noscript>
-      <h1>Potato Daily</h1>
-      <p>Potato Daily is a free random picker that helps Scrum Masters and agile teams run fair, fast daily standups by selecting who speaks next. Please enable JavaScript to use the app.</p>
+      <header>
+        <h1>Potato Daily — Random Picker for Scrum Daily Standups</h1>
+        <p><strong>Potato Daily</strong> is a free random picker that helps Scrum Masters, agile coaches, and engineering teams run fair, fast daily standups by selecting who speaks next.</p>
+      </header>
+
+      <section>
+        <h2>What it does</h2>
+        <p>Add your team, start a round, and the app counts down before randomly choosing one teammate to share their update. Picked teammates are removed from the pool until everyone has had a turn — so each daily standup feels fair and stays on time.</p>
+      </section>
+
+      <section>
+        <h2>How to use Potato Daily</h2>
+        <ol>
+          <li>Add each team member by name. An avatar is generated automatically.</li>
+          <li>Click start. A short countdown plays.</li>
+          <li>The picker reveals one random teammate. They give their standup update.</li>
+          <li>Continue until the pool is empty, then reset for the next ceremony.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Features</h2>
+        <ul>
+          <li>Free, no signup, no account.</li>
+          <li>Works for daily standups, retrospectives, sprint planning, and refinement.</li>
+          <li>Multilingual — English, Spanish, French (auto-detected).</li>
+          <li>Team data stored locally in your browser. Nothing is uploaded.</li>
+          <li>Responsive — works on mobile and desktop.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Frequently asked questions</h2>
+        <h3>Is Potato Daily free?</h3>
+        <p>Yes. No signup, no payment, no ads on team data.</p>
+        <h3>Where is my team data stored?</h3>
+        <p>In your browser via localStorage. Nothing is sent to a server.</p>
+        <h3>Can I use it for retrospectives or sprint planning?</h3>
+        <p>Yes. The random picker works for any Scrum or agile ceremony.</p>
+      </section>
+
+      <p><strong>Note:</strong> The interactive picker requires JavaScript. Please enable JavaScript to use the app.</p>
     </noscript>
     <script type="module" src="/src/main.js"></script>
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1098294754637557"
