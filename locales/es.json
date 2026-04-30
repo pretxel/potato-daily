@@ -11,5 +11,6 @@
   "page_avatar_selected": "Miembro seleccionado",
   "page_empty_state": "Agrega al menos una persona para comenzar.",
   "page_counter_picking_in": "Eligiendo en {count}…",
+  "page_references_title": "Otros proyectos",
   "error_duplicate_name": "El nombre ya fue agregado"
 }
