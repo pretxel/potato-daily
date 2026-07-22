@@ -1,9 +1,9 @@
-import { defineConfig } from "npm:vite@^5";
-import { svelte } from "npm:@sveltejs/vite-plugin-svelte@^4";
-import { svelteTesting } from "npm:@testing-library/svelte@^5.2.0/vite";
+import { defineConfig } from "vitest/config";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
+import { svelteTesting } from "@testing-library/svelte/vite";
 
-import "npm:svelte@^5";
-import "npm:svelte-i18n@^4.0.0";
+import "svelte";
+import "svelte-i18n";
 
 // https://vitejs.dev/config/
 export default defineConfig({
