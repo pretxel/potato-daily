@@ -1,16 +1,16 @@
 {
   "imports": {
-    "@std/http/file-server": "jsr:@std/http@^1.1.2/file-server",
-    "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^7.2.0",
-    "@testing-library/jest-dom/vitest": "npm:@testing-library/jest-dom@^7.0.0/vitest",
+    "@std/http/file-server": "jsr:@std/http@^1.1.4/file-server",
+    "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^7.3.1",
+    "@testing-library/jest-dom/vitest": "npm:@testing-library/jest-dom@^7.0.1/vitest",
     "@testing-library/svelte": "npm:@testing-library/svelte@^5.4.2",
     "@testing-library/svelte/vite": "npm:@testing-library/svelte@^5.4.2/vite",
     "jsdom": "npm:jsdom@^29.1.1",
-    "svelte": "npm:svelte@^5.56.7",
+    "svelte": "npm:svelte@^5.57.1",
     "svelte-i18n": "npm:svelte-i18n@^4.0.1",
-    "vite": "npm:vite@^8.1.5",
-    "vitest": "npm:vitest@^4.1.10",
-    "vitest/config": "npm:vitest@^4.1.10/config"
+    "vite": "npm:vite@^8.3.2",
+    "vitest": "npm:vitest@^5.0.3",
+    "vitest/config": "npm:vitest@^5.0.3/config"
   },
   "tasks": {
     "dev": "deno run -A --node-modules-dir vite",
