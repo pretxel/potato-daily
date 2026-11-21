@@ -43,13 +43,13 @@
             <li>
               <a
                 class="ref-card"
-                href="https://pokemon-poker.vercel.app/"
+                href="https://pokemon-poker.pretlabs.app/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div class="ref-thumb ref-thumb--pokemon" aria-hidden="true">
                   <img
-                    src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fpokemon-poker.vercel.app%2F?w=640&h=400"
+                    src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fpokemon-poker.pretlabs.app%2F?w=640&h=400"
                     alt=""
                     loading="lazy"
                     width="640"
@@ -58,20 +58,20 @@
                 </div>
                 <div class="ref-meta">
                   <span class="ref-title">Pokemon Poker</span>
-                  <span class="ref-host">pokemon-poker.vercel.app</span>
+                  <span class="ref-host">pokemon-poker.pretlabs.app</span>
                 </div>
               </a>
             </li>
             <li>
               <a
                 class="ref-card"
-                href="https://retro-ball-orpin.vercel.app/"
+                href="https://retro-ball.pretlabs.app/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div class="ref-thumb ref-thumb--retro" aria-hidden="true">
                   <img
-                    src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fretro-ball-orpin.vercel.app%2F?w=640&h=400"
+                    src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fretro-ball.pretlabs.app%2F?w=640&h=400"
                     alt=""
                     loading="lazy"
                     width="640"
@@ -80,7 +80,7 @@
                 </div>
                 <div class="ref-meta">
                   <span class="ref-title">Retro Ball</span>
-                  <span class="ref-host">retro-ball-orpin.vercel.app</span>
+                  <span class="ref-host">retro-ball.pretlabs.app</span>
                 </div>
               </a>
             </li>
