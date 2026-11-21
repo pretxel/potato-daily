@@ -75,3 +75,26 @@ Re-tested with jsdom 30.1.2 (now resolving undici 8.11.2). Same failure: `TypeEr
 **Date**: 2026-10-06
 
 `deno lint`, `deno fmt --check`, `deno task test` (3 files, 28 tests) and `deno task build` all pass on the final versions listed above.
+
+### jsdom 31.0.1 — still incompatible
+**Date**: 2026-11-21
+**Decision**: Remain on jsdom 29.1.1
+
+Same `TypeError: webidl.util.markAsUncloneable is not a function` on Deno 2.7.13; every vitest fork fails to start.
+
+### vitest 5.1.x — incompatible with Deno 2.7
+**Date**: 2026-11-21
+**Decision**: Pin vitest to `~5.0.5`
+
+vitest 5.1.1 imports `syncBuiltinESMExports` from `node:module`, which Deno 2.7.13 does not export, so workers crash on start:
+
+```
+SyntaxError: The requested module 'node:module' does not provide an export named 'syncBuiltinESMExports'
+```
+
+Re-evaluate on the next Deno release. Bumped in this round: svelte 5.59.1, vite 8.3.8, vitest 5.0.5, @testing-library/jest-dom 8.0.0.
+
+### Final verification
+**Date**: 2026-11-21
+
+`deno lint`, `deno task test` (3 files, 28 tests) and `deno task build` pass.
